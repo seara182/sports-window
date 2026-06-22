@@ -1,0 +1,254 @@
+{
+  "lang": { "en": "English", "de": "Deutsch" },
+  "common": {
+    "close": "Schließen",
+    "update": "Aktualisieren",
+    "notNow": "Später",
+    "loading": "Laden…",
+    "dash": "—"
+  },
+  "titlebar": {
+    "menu": "Menü",
+    "toggleNav": "Navigation umschalten",
+    "refresh": "Aktualisieren",
+    "refreshData": "Daten aktualisieren",
+    "settings": "Einstellungen",
+    "minimize": "Minimieren",
+    "close": "Schließen",
+    "updated": "Aktualisiert {{time}}",
+    "stale": "Gespeicherte Daten — letzte Aktualisierung fehlgeschlagen.",
+    "staleBadge": "Veraltet"
+  },
+  "segmented": { "chooseTeam": "Team wählen" },
+  "nav": {
+    "dashboard": "Übersicht",
+    "spotlight": "Spotlight",
+    "formation": "Formation",
+    "lineup": "Aufstellung",
+    "standings": "Tabelle",
+    "venue": "Stadion",
+    "history": "Verlauf",
+    "playoffs": "Playoffs",
+    "teamHub": "Team-Hub",
+    "teamSelector": "Team-Auswahl"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "textSize": "Schriftgröße",
+    "small": "Klein",
+    "medium": "Mittel",
+    "large": "Groß",
+    "demoMode": "Demo-Modus",
+    "off": "Aus",
+    "on": "An",
+    "demoActive": "Aktiver Datensatz: \"{{label}}\"",
+    "demoPaused": "Live-Daten pausiert, solange der Demo-Modus aktiv ist.",
+    "theme": "Design",
+    "system": "System",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "defaultTeam": "Standard-Team",
+    "lastViewed": "Zuletzt angesehen",
+    "language": "Sprache",
+    "launchAtStartup": "Beim Start öffnen",
+    "launchHint": "Sports Window automatisch beim Anmelden öffnen.",
+    "sidebarBackground": "Seitenleisten-Hintergrund ({{sport}})",
+    "sidebarIcon": "Sport-Symbol anzeigen",
+    "sfGraphics": "San-Francisco-Grafiken",
+    "gradients": {
+      "auto": "Teamfarben",
+      "sunset": "Sonnenuntergang",
+      "ocean": "Ozean",
+      "forest": "Wald",
+      "dusk": "Dämmerung",
+      "slate": "Schiefer"
+    },
+    "about": {
+      "body": "Ich bin Mika – ich hoffe hast Spaß an meiner App! Danke, dass du es nutzt.",
+      "signature": "made by Mika"
+    },
+    "support": {
+      "title": "Support",
+      "hint": "Einen Fehler gefunden? Kopiere das Diagnose-Log unten und füge es in ein GitHub Issue oder eine Nachricht an mich ein – es enthält keine persönlichen Daten, nur App-Version, deine Einstellungen und kürzliche Abruffehler.",
+      "copyButton": "Log für Mika kopieren",
+      "copied": "Kopiert!",
+      "copyFailed": "Kopieren fehlgeschlagen — erneut versuchen"
+    }
+  },
+  "teamSelect": {
+    "title": "Team-Auswahl",
+    "hint": "NFL- und MLB-Team zum Verfolgen wählen. Live-Daten, Tabelle und Kader aktualisieren sich bei der Auswahl.",
+    "nfl": "NFL",
+    "mlb": "MLB"
+  },
+  "data": {
+    "demoBanner": "DEMO-MODUS — {{label}}",
+    "loadFailed": "{{team}}-Daten konnten nicht geladen werden. Verbindung prüfen und aktualisieren.",
+    "rateLimited": "Aktualisierung pausiert — ESPN-Ratenlimit erreicht; gespeicherte Daten werden angezeigt"
+  },
+  "sections": {
+    "recentResults": "Letzte Ergebnisse",
+    "recentCount": "letzte {{count}}",
+    "roster": "Kader",
+    "rosterCount": "{{count}} Spieler",
+    "stadium": "Stadion",
+    "ballpark": "Ballpark"
+  },
+  "rosterGroups": {
+    "Offense": "Offense",
+    "Defense": "Defense",
+    "Special Teams": "Special Teams",
+    "Injured Reserve": "Injured Reserve",
+    "Suspended": "Gesperrt",
+    "Practice Squad": "Practice Squad",
+    "Pitchers": "Pitcher",
+    "Catchers": "Catcher",
+    "Infield": "Infield",
+    "Outfield": "Outfield",
+    "Designated Hitter": "Designated Hitter"
+  },
+  "roster": {
+    "filter": "Nach Name, Position oder Nummer filtern",
+    "filterAria": "Kader filtern",
+    "player": "Spieler",
+    "pos": "POS",
+    "age": "ALT",
+    "ht": "GR",
+    "wt": "GW",
+    "unavailable": "Kader derzeit nicht verfügbar.",
+    "shownOf": "{{shown}} von {{total}}",
+    "noMatch": "Keine Spieler passen zu „{{query}}“."
+  },
+  "nextGame": {
+    "label": "Nächstes Spiel",
+    "timeTbd": "Zeit offen",
+    "days": "Tage",
+    "hrs": "Std",
+    "min": "Min"
+  },
+  "hero": {
+    "nextGame": "NÄCHSTES SPIEL",
+    "howToWatch": "Übertragung",
+    "kickoff": "Kickoff",
+    "firstPitch": "First Pitch",
+    "final": "Endstand",
+    "finalScore": "Endstand {{score}}",
+    "nextGameWeek": "NÄCHSTES SPIEL · {{week}}",
+    "latestResult": "LETZTES ERGEBNIS",
+    "home": "Heim",
+    "away": "Auswärts",
+    "offseason": "Offseason",
+    "noGames": "Keine Spiele angesetzt",
+    "upcomingAria": "Kommendes Spiel: {{prefix}} {{opponent}}, Spieldetails öffnen"
+  },
+  "stadium": {
+    "showNextFact": "Nächste Info anzeigen",
+    "nextFact": "Nächste Info",
+    "unavailable": "Keine Stadioninformationen verfügbar.",
+    "Opened": "Eröffnet",
+    "Capacity": "Kapazität",
+    "Surface": "Untergrund",
+    "Location": "Ort",
+    "Dimensions": "Maße",
+    "Roof": "Dach"
+  },
+  "history": {
+    "winLossTrend": "Sieg/Niederlage-Trend",
+    "regularSeason": "Reguläre Saison",
+    "playoffs": "Playoffs",
+    "championship": "Meisterschaft",
+    "scoringTrend": "Punkte-Trend",
+    "teamEra": "Team-ERA",
+    "lastSeasons": "letzte 8 Saisons",
+    "pointsScored": "Erzielte Punkte",
+    "pointsAllowed": "Gegenpunkte",
+    "championships": "Meistertitel",
+    "swipeSeasons": "← wischen für alle Saisons →",
+    "swipeAll": "← wischen für alle Saisons →"
+  },
+  "playoffs": {
+    "unavailable": "Playoff-Daten nicht verfügbar.",
+    "tbd": "Sobald der Spielplan steht, wieder vorbeischauen.",
+    "final": "Endstand",
+    "emptyBracket": "Leerer Playoff-Baum",
+    "populates": "Der Baum füllt sich, sobald die Postseason beginnt."
+  },
+  "results": {
+    "noRecent": "Keine aktuellen Spiele vorhanden."
+  },
+  "standings": {
+    "unavailable": "Tabelle derzeit nicht verfügbar."
+  },
+  "drilldown": {
+    "unavailable": "Für diese Saison sind keine Daten verfügbar.",
+    "pointsAllowedPerG": "Gegenpunkte / Sp.",
+    "teamEra": "Team-ERA",
+    "teamAvg": "Team-AVG"
+  },
+  "h2h": {
+    "heading": "Direkter Vergleich vs {{opponent}}",
+    "loadError": "Vergleichsverlauf konnte nicht geladen werden.",
+    "seriesNa": "Serien-Bilanz nicht verfügbar."
+  },
+  "spotlight": {
+    "label": "Spieler-Spotlight",
+    "pin": "Spieler anheften",
+    "unpin": "Anheften aufheben",
+    "pinAria": "Spotlight-Spieler anheften",
+    "unpinAria": "Anheften aufheben",
+    "statsUnavailable": "Statistiken nicht verfügbar.",
+    "noSeasonStats": "Noch keine Saisonstatistiken verfügbar.",
+    "spotlightAria": "Spieler-Spotlight: {{name}}, Spielerdetails öffnen"
+  },
+  "player": {
+    "statsError": "Spielerstatistiken konnten nicht geladen werden. ESPN ist evtl. nicht erreichbar.",
+    "statsUnavailable": "Statistiken nicht verfügbar.",
+    "retry": "Erneut versuchen",
+    "height": "Größe",
+    "weight": "Gewicht",
+    "aboutMeasure": "{{display}} entspricht etwa {{metric}}.",
+    "yearsInLeague_one": "{{count}} Jahr in der Liga",
+    "yearsInLeague_other": "{{count}} Jahre in der Liga",
+    "demoStats": "Demo-Statistiken",
+    "noSeasonStats": "Noch keine Saisonstatistiken verfügbar.",
+    "bySeason": "nach Saison",
+    "vsCareer": "— {{year}} vs. Karriere"
+  },
+  "game": {
+    "loadError": "Spieldaten konnten nicht geladen werden. ESPN ist evtl. nicht erreichbar.",
+    "retry": "Erneut versuchen",
+    "teamStats": "Team-Statistiken",
+    "topPerformers": "Top-Performer",
+    "recap": "Zusammenfassung",
+    "linescore": "Linescore",
+    "pitchingDecisions": "Pitching-Entscheidungen"
+  },
+  "upcoming": {
+    "gameInfo": "Spielinfos",
+    "seasonContext": "Saison-Kontext",
+    "headToHead": "Direkter Vergleich",
+    "winProbPrefix": "ESPN-Siegwahrscheinlichkeit"
+  },
+  "ruleBook": {
+    "title": "Regelwerk",
+    "open": "Regelwerk öffnen",
+    "close": "Regelwerk schließen",
+    "search": "Regeln, Begriffe, Positionen suchen…",
+    "searchAria": "Regelwerk durchsuchen",
+    "chooseSection": "Regelwerk-Abschnitt wählen",
+    "noResults": "Keine Treffer für „{{query}}“."
+  },
+  "format": {
+    "never": "nie",
+    "justNow": "gerade eben",
+    "minutesAgo_one": "vor {{count}} Minute",
+    "minutesAgo_other": "vor {{count}} Minuten",
+    "hoursAgo_one": "vor {{count}} Stunde",
+    "hoursAgo_other": "vor {{count}} Stunden",
+    "yesterday": "gestern",
+    "daysAgo_one": "vor {{count}} Tag",
+    "daysAgo_other": "vor {{count}} Tagen",
+    "weeksAgo_one": "vor {{count}} Woche",
+    "weeksAgo_other": "vor {{count}} Wochen"
+  }
+}

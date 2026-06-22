@@ -1,0 +1,77 @@
+.stadium-card {
+  position: relative;
+}
+
+.stadium-card__name {
+  font-family: var(--font-sans);
+  font-size: var(--fs-heading);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--team-accent);
+  margin-bottom: 1.5rem;
+  padding-right: 2rem;
+}
+
+.stadium-card__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stadium-card__stat-label {
+  font-size: var(--fs-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  margin-bottom: 3px;
+}
+
+.stadium-card__stat-value {
+  font-size: var(--fs-body);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.stadium-card__fact {
+  border-left: 3px solid var(--team-accent);
+  padding-left: 12px;
+  font-style: italic;
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.stadium-card__refresh {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: var(--fs-body-lg);
+  color: var(--text-tertiary);
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.stadium-card__refresh:hover {
+  color: var(--team-accent);
+}
+
+.stadium-card__refresh-icon {
+  display: inline-block;
+}
+.stadium-card__refresh-icon.animate-spin {
+  animation: stadium-card-spin 300ms ease-in-out;
+}
+@keyframes stadium-card-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

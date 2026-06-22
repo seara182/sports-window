@@ -1,0 +1,56 @@
+.next-game {
+  margin: 0 12px 20px;
+  background: var(--glass-widget-outer);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.next-game__label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 6px;
+}
+
+.next-game__opp {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.next-game__date {
+  font-size: 11.5px;
+  opacity: 0.65;
+  margin-bottom: 10px;
+}
+
+.next-game__countdown {
+  display: flex;
+  gap: 6px;
+}
+
+.next-game__unit {
+  flex: 1;
+  background: var(--glass-widget-inner);
+  border-radius: 8px;
+  padding: 7px 0;
+  text-align: center;
+}
+
+.next-game__val {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.next-game__lbl {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-top: 3px;
+}

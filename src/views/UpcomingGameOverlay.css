@@ -1,0 +1,123 @@
+/* ---- Upcoming game overlay ---- */
+
+.upcoming-overlay__header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.upcoming-overlay__matchup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.upcoming-overlay__team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.upcoming-overlay__logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.upcoming-overlay__abbr {
+  font-size: var(--fs-subheading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-secondary);
+}
+.upcoming-overlay__at {
+  font-size: var(--fs-body);
+  color: var(--text-tertiary);
+}
+
+.upcoming-overlay__kickoff-label {
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.upcoming-overlay__countdown {
+  font-size: var(--fs-score);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--team-accent);
+}
+.upcoming-overlay__sep {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--text-tertiary);
+  margin: 0 0.35em 0 0.1em;
+}
+.upcoming-overlay__sep:last-child {
+  margin-right: 0;
+}
+
+.upcoming-overlay__meta {
+  margin-top: 0.6rem;
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+}
+
+/* ---- Sections ---- */
+.upcoming-overlay__section {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+}
+.upcoming-overlay__section:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+.upcoming-overlay__section-title {
+  font-size: var(--fs-subheading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+}
+
+.upcoming-overlay__info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+}
+.upcoming-overlay__weather {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---- Season context bar ---- */
+.upcoming-overlay__matchup-bar {
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-sunken);
+  overflow: hidden;
+}
+.upcoming-overlay__matchup-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: var(--radius-pill);
+}
+.upcoming-overlay__matchup-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.upcoming-overlay__win-prob {
+  margin-top: 0.6rem;
+  font-size: var(--fs-label);
+  color: var(--text-tertiary);
+}

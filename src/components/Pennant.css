@@ -1,0 +1,38 @@
+.pennant-wrap {
+  display: inline-flex;
+}
+.pennant-wrap .hoverable {
+  display: inline-flex;
+  border-bottom: none;
+  cursor: pointer;
+}
+.pennant-wrap .hoverable:focus-visible {
+  outline-offset: 4px;
+}
+
+.pennant {
+  width: 80px;
+  height: 130px;
+  flex-shrink: 0;
+}
+
+.pennant__shape {
+  fill: var(--team-accent);
+  transition: fill var(--dur-med) var(--ease-in-out);
+}
+
+.pennant__year,
+.pennant__label {
+  fill: #fff;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.pennant__year {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+.pennant__label {
+  font-size: 9px;
+  letter-spacing: 0.03em;
+}

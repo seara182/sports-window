@@ -1,0 +1,20 @@
+.h2h-strip__skel {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+@media (max-width: 720px) {
+  .h2h-strip__skel {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+.h2h-strip__skel-card {
+  height: 88px;
+  border-radius: var(--radius-md);
+}
+
+.h2h-strip__record {
+  margin-top: 0.85rem;
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+}

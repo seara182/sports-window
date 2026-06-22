@@ -1,0 +1,43 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+.vite
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment and secrets
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Rust build artifacts
+src-tauri/target/
+
+# Tauri mobile scaffolding (generated per-machine)
+src-tauri/gen/
+
+# Internal dev/planning notes, prompts, and design references — not part of
+# the shipped product, excluded entirely from the public repo
+testing_Variants/

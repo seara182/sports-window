@@ -1,0 +1,58 @@
+{
+  "season": "2014",
+  "label": "Giants 2014 – World Series Champions",
+  "record": { "wins": 88, "losses": 74 },
+  "standing": "2nd in NL West · Wild Card entry",
+  "playoffPath": [
+    { "round": "NL Wild Card", "opponent": "Pittsburgh Pirates", "result": "W", "score": "8–0" },
+    { "round": "NLDS", "opponent": "Washington Nationals", "result": "W", "score": "3–1" },
+    { "round": "NLCS", "opponent": "St. Louis Cardinals", "result": "W", "score": "4–1" },
+    { "round": "World Series", "opponent": "Kansas City Royals", "result": "W", "score": "4–3" }
+  ],
+  "rosterSpotlight": [
+    { "name": "Madison Bumgarner", "position": "SP", "stats": "18-10 · 2.98 ERA · 219 K" },
+    { "name": "Buster Posey", "position": "C", "stats": ".311 AVG · 22 HR · 89 RBI" },
+    { "name": "Pablo Sandoval", "position": "3B", "stats": ".279 AVG · 16 HR · 73 RBI" },
+    { "name": "Hunter Pence", "position": "RF", "stats": ".277 AVG · 20 HR · 74 RBI" },
+    { "name": "Brandon Belt", "position": "1B", "stats": ".243 AVG · 12 HR · 27 RBI" }
+  ],
+  "teamStats": { "teamEra": 3.5, "teamAvg": 0.255 },
+  "recentResults": [
+    {
+      "date": "Sep 28 2014",
+      "opponent": "Colorado Rockies",
+      "homeAway": "away",
+      "score": "8–4",
+      "result": "W"
+    },
+    {
+      "date": "Sep 27 2014",
+      "opponent": "Colorado Rockies",
+      "homeAway": "away",
+      "score": "6–4",
+      "result": "W"
+    },
+    {
+      "date": "Sep 26 2014",
+      "opponent": "Colorado Rockies",
+      "homeAway": "away",
+      "score": "3–4",
+      "result": "L"
+    },
+    {
+      "date": "Sep 24 2014",
+      "opponent": "San Diego Padres",
+      "homeAway": "home",
+      "score": "4–1",
+      "result": "W"
+    },
+    {
+      "date": "Sep 23 2014",
+      "opponent": "San Diego Padres",
+      "homeAway": "home",
+      "score": "5–2",
+      "result": "W"
+    }
+  ],
+  "historyWins": [94, 76, 88, 84, 87, 64, 73, 77, 29, 107, 81, 79, 88]
+}

@@ -1,0 +1,295 @@
+/* ---- Game detail panel (past-game overlay content) ---- */
+
+.game-detail__header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+.game-detail__eyebrow {
+  margin-bottom: 0.75rem;
+}
+.game-detail__matchup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.game-detail__team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.game-detail__logo img,
+.game-detail__logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.game-detail__abbr {
+  font-size: var(--fs-subheading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-secondary);
+}
+.game-detail__score {
+  font-size: var(--fs-score);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+.game-detail__score.is-winner {
+  color: var(--team-accent);
+}
+.game-detail__at {
+  font-size: var(--fs-body);
+  color: var(--text-tertiary);
+}
+.game-detail__venue {
+  margin-top: 0.6rem;
+  font-size: var(--fs-body);
+}
+
+/* ---- Sections ---- */
+.game-detail__section {
+  margin-top: 1.75rem;
+}
+.game-detail__section:first-of-type {
+  margin-top: 0;
+}
+.game-detail__section-title {
+  font-size: var(--fs-subheading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+}
+
+/* ---- Skeleton placeholders ---- */
+.game-detail__skel-line {
+  height: 14px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+}
+.game-detail__skel-bar {
+  height: 8px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.1rem;
+}
+.game-detail__skel-block {
+  height: 90px;
+  border-radius: var(--radius-md);
+}
+
+/* ---- Error state ---- */
+.game-detail__error {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: var(--text-secondary);
+  font-size: var(--fs-body-lg);
+}
+.game-detail__retry {
+  margin-top: 0.75rem;
+  padding: 8px 18px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-primary);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+.game-detail__retry:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---- NFL: stat comparison rows ---- */
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-tag);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 0.6rem;
+}
+.stat-row {
+  margin-bottom: 1rem;
+}
+.stat-row__values {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: var(--fs-body-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+.stat-row__label {
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: none;
+}
+.stat-row__bar {
+  display: flex;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  background: var(--surface-sunken);
+}
+.stat-row__fill {
+  height: 100%;
+}
+.stat-row__fill--away {
+  background: var(--text-tertiary);
+}
+.stat-row__fill--home {
+  background: var(--team-accent);
+}
+
+/* ---- Top performers ---- */
+.performer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 560px) {
+  .performer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.performer-card {
+  background: var(--surface-sunken);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1rem;
+}
+.performer-card__team {
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 0.5rem;
+}
+.performer-card__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: var(--fs-body);
+  padding: 0.3rem 0;
+}
+.performer-card__row + .performer-card__row {
+  border-top: 1px solid var(--border);
+}
+.performer-card__name {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.performer-card__value {
+  color: var(--text-secondary);
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ---- Recap quote ---- */
+.game-detail__quote {
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--team-accent);
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: var(--fs-body-lg);
+  line-height: 1.6;
+}
+.game-detail__quote-headline {
+  margin: 0 0 0.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.game-detail__quote p {
+  margin: 0;
+}
+.game-detail__quote p + p {
+  margin-top: 0.5rem;
+}
+
+/* ---- MLB: linescore ---- */
+.linescore {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-caption-lg);
+}
+.linescore th,
+.linescore td {
+  text-align: center;
+  padding: 0.4rem 0.5rem;
+}
+.linescore thead th {
+  color: var(--text-tertiary);
+  font-weight: 600;
+  font-size: var(--fs-tag);
+}
+.linescore tbody th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.linescore__cell {
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+}
+.linescore__cell--r1 {
+  background: color-mix(in srgb, var(--team-accent) 40%, transparent);
+}
+.linescore__cell--r2 {
+  background: color-mix(in srgb, var(--team-accent) 65%, transparent);
+}
+.linescore__cell--r3 {
+  background: color-mix(in srgb, var(--team-accent) 90%, transparent);
+  color: #fff;
+}
+.linescore__total {
+  font-weight: 700;
+  color: var(--text-primary);
+  border-left: 1px solid var(--border);
+}
+
+/* ---- MLB: pitching decisions ---- */
+.decisions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.decision {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--fs-body);
+}
+.decision__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  background: var(--surface-sunken);
+  color: var(--text-secondary);
+}
+.decision__badge--w {
+  background: var(--pill-win-bg);
+  color: var(--pill-win-text);
+}
+.decision__name {
+  flex: 1;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.decision__record {
+  color: var(--text-tertiary);
+}

@@ -1,0 +1,254 @@
+{
+  "lang": { "en": "English", "de": "Deutsch" },
+  "common": {
+    "close": "Close",
+    "update": "Update",
+    "notNow": "Not now",
+    "loading": "Loading…",
+    "dash": "—"
+  },
+  "titlebar": {
+    "menu": "Menu",
+    "toggleNav": "Toggle navigation menu",
+    "refresh": "Refresh",
+    "refreshData": "Refresh data",
+    "settings": "Settings",
+    "minimize": "Minimize",
+    "close": "Close",
+    "updated": "Updated {{time}}",
+    "stale": "Showing saved data — the last refresh failed.",
+    "staleBadge": "Stale"
+  },
+  "segmented": { "chooseTeam": "Choose team" },
+  "nav": {
+    "dashboard": "Dashboard",
+    "spotlight": "Spotlight",
+    "formation": "Formation",
+    "lineup": "Lineup",
+    "standings": "Standings",
+    "venue": "Venue",
+    "history": "History",
+    "playoffs": "Playoffs",
+    "teamHub": "Team Hub",
+    "teamSelector": "Team selector"
+  },
+  "settings": {
+    "title": "Settings",
+    "textSize": "Text size",
+    "small": "Small",
+    "medium": "Medium",
+    "large": "Large",
+    "demoMode": "Demo Mode",
+    "off": "Off",
+    "on": "On",
+    "demoActive": "Active dataset: \"{{label}}\"",
+    "demoPaused": "Live data is paused while Demo Mode is active.",
+    "theme": "Theme",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark",
+    "defaultTeam": "Default team",
+    "lastViewed": "Last viewed",
+    "language": "Language",
+    "launchAtStartup": "Launch at startup",
+    "launchHint": "Open Sports Window automatically when you sign in.",
+    "sidebarBackground": "Sidebar background ({{sport}})",
+    "sidebarIcon": "Show sport icon",
+    "sfGraphics": "San Francisco graphics",
+    "gradients": {
+      "auto": "Team colors",
+      "sunset": "Sunset",
+      "ocean": "Ocean",
+      "forest": "Forest",
+      "dusk": "Dusk",
+      "slate": "Slate"
+    },
+    "about": {
+      "body": "I'm Mika — I hope you enjoy using my app! Thanks for using it.",
+      "signature": "made by Mika"
+    },
+    "support": {
+      "title": "Support",
+      "hint": "Hit a bug? Copy the diagnostic log below and paste it into a GitHub Issue or a message to me — it has no personal data, just app version, your settings, and recent fetch errors.",
+      "copyButton": "Copy log to send to Mika",
+      "copied": "Copied!",
+      "copyFailed": "Couldn't copy — try again"
+    }
+  },
+  "teamSelect": {
+    "title": "Team selector",
+    "hint": "Pick the NFL and MLB teams to follow. Live data, standings, and roster update on selection.",
+    "nfl": "NFL",
+    "mlb": "MLB"
+  },
+  "data": {
+    "demoBanner": "DEMO MODE — {{label}}",
+    "loadFailed": "Couldn’t load {{team}} data. Check your connection and press refresh.",
+    "rateLimited": "Data refresh paused — ESPN rate limit hit; showing cached data"
+  },
+  "sections": {
+    "recentResults": "Recent Results",
+    "recentCount": "last {{count}}",
+    "roster": "Roster",
+    "rosterCount": "{{count}} players",
+    "stadium": "Stadium",
+    "ballpark": "Ballpark"
+  },
+  "rosterGroups": {
+    "Offense": "Offense",
+    "Defense": "Defense",
+    "Special Teams": "Special Teams",
+    "Injured Reserve": "Injured Reserve",
+    "Suspended": "Suspended",
+    "Practice Squad": "Practice Squad",
+    "Pitchers": "Pitchers",
+    "Catchers": "Catchers",
+    "Infield": "Infield",
+    "Outfield": "Outfield",
+    "Designated Hitter": "Designated Hitter"
+  },
+  "roster": {
+    "filter": "Filter by name, position, or number",
+    "filterAria": "Filter roster",
+    "player": "Player",
+    "pos": "POS",
+    "age": "AGE",
+    "ht": "HT",
+    "wt": "WT",
+    "unavailable": "Roster is not available right now.",
+    "shownOf": "{{shown}} of {{total}}",
+    "noMatch": "No players match “{{query}}”."
+  },
+  "nextGame": {
+    "label": "Next Game",
+    "timeTbd": "Time TBD",
+    "days": "Days",
+    "hrs": "Hrs",
+    "min": "Min"
+  },
+  "hero": {
+    "nextGame": "NEXT GAME",
+    "howToWatch": "How to Watch",
+    "kickoff": "Kickoff",
+    "firstPitch": "First Pitch",
+    "final": "Final",
+    "finalScore": "Final {{score}}",
+    "nextGameWeek": "NEXT GAME · {{week}}",
+    "latestResult": "LATEST RESULT",
+    "home": "Home",
+    "away": "Away",
+    "offseason": "Offseason",
+    "noGames": "No games scheduled",
+    "upcomingAria": "Upcoming game: {{prefix}} {{opponent}}, open game details"
+  },
+  "stadium": {
+    "showNextFact": "Show next fun fact",
+    "nextFact": "Next fun fact",
+    "unavailable": "Venue information unavailable.",
+    "Opened": "Opened",
+    "Capacity": "Capacity",
+    "Surface": "Surface",
+    "Location": "Location",
+    "Dimensions": "Dimensions",
+    "Roof": "Roof"
+  },
+  "history": {
+    "winLossTrend": "Win/Loss Trend",
+    "regularSeason": "Regular season",
+    "playoffs": "Playoffs",
+    "championship": "Championship",
+    "scoringTrend": "Scoring Trend",
+    "teamEra": "Team ERA",
+    "lastSeasons": "last 8 seasons",
+    "pointsScored": "Points scored",
+    "pointsAllowed": "Points allowed",
+    "championships": "Championships",
+    "swipeSeasons": "← swipe to see every season →",
+    "swipeAll": "← swipe to see all seasons →"
+  },
+  "playoffs": {
+    "unavailable": "Bracket data unavailable.",
+    "tbd": "Check back when the schedule is released.",
+    "final": "Final",
+    "emptyBracket": "Empty playoff bracket",
+    "populates": "Bracket populates when postseason begins."
+  },
+  "results": {
+    "noRecent": "No recent games to show."
+  },
+  "standings": {
+    "unavailable": "Standings are not available right now."
+  },
+  "drilldown": {
+    "unavailable": "Data unavailable for this season.",
+    "pointsAllowedPerG": "Points Allowed / G",
+    "teamEra": "Team ERA",
+    "teamAvg": "Team AVG"
+  },
+  "h2h": {
+    "heading": "Head-to-Head vs {{opponent}}",
+    "loadError": "Could not load matchup history.",
+    "seriesNa": "Series record not available."
+  },
+  "spotlight": {
+    "label": "Player Spotlight",
+    "pin": "Pin player",
+    "unpin": "Unpin player",
+    "pinAria": "Pin spotlight player",
+    "unpinAria": "Unpin spotlight player",
+    "statsUnavailable": "Stats unavailable.",
+    "noSeasonStats": "No season stats available yet.",
+    "spotlightAria": "Player spotlight: {{name}}, open player details"
+  },
+  "player": {
+    "statsError": "Could not load player stats. ESPN may be unavailable.",
+    "statsUnavailable": "Stats unavailable.",
+    "retry": "Retry",
+    "height": "Height",
+    "weight": "Weight",
+    "aboutMeasure": "{{display}} is about {{metric}}.",
+    "yearsInLeague_one": "{{count}} yr in league",
+    "yearsInLeague_other": "{{count}} yrs in league",
+    "demoStats": "Demo stats",
+    "noSeasonStats": "No season stats available yet.",
+    "bySeason": "by season",
+    "vsCareer": "— {{year}} vs. career"
+  },
+  "game": {
+    "loadError": "Could not load game data. ESPN may be unavailable.",
+    "retry": "Retry",
+    "teamStats": "Team Stats",
+    "topPerformers": "Top Performers",
+    "recap": "Recap",
+    "linescore": "Linescore",
+    "pitchingDecisions": "Pitching Decisions"
+  },
+  "upcoming": {
+    "gameInfo": "Game Info",
+    "seasonContext": "Season Context",
+    "headToHead": "Head-to-Head",
+    "winProbPrefix": "ESPN Win Probability"
+  },
+  "ruleBook": {
+    "title": "Rule Book",
+    "open": "Open Rule Book",
+    "close": "Close Rule Book",
+    "search": "Search rules, lingo, positions…",
+    "searchAria": "Search the Rule Book",
+    "chooseSection": "Choose a Rule Book section",
+    "noResults": "No matches for “{{query}}”."
+  },
+  "format": {
+    "never": "never",
+    "justNow": "just now",
+    "minutesAgo_one": "{{count}} minute ago",
+    "minutesAgo_other": "{{count}} minutes ago",
+    "hoursAgo_one": "{{count}} hour ago",
+    "hoursAgo_other": "{{count}} hours ago",
+    "yesterday": "yesterday",
+    "daysAgo_one": "{{count}} day ago",
+    "daysAgo_other": "{{count}} days ago",
+    "weeksAgo_one": "{{count}} week ago",
+    "weeksAgo_other": "{{count}} weeks ago"
+  }
+}

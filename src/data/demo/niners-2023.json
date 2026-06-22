@@ -1,0 +1,70 @@
+{
+  "season": "2023",
+  "label": "49ers 2023 – Super Bowl Run",
+  "record": { "wins": 12, "losses": 5 },
+  "standing": "NFC West Champions · 1st in NFC West",
+  "playoffPath": [
+    { "round": "Wild Card", "opponent": "Green Bay Packers", "result": "W", "score": "24–21" },
+    { "round": "NFC Championship", "opponent": "Detroit Lions", "result": "W", "score": "34–31" },
+    {
+      "round": "Super Bowl LVIII",
+      "opponent": "Kansas City Chiefs",
+      "result": "L",
+      "score": "22–25 OT"
+    }
+  ],
+  "rosterSpotlight": [
+    {
+      "name": "Brock Purdy",
+      "position": "QB",
+      "stats": "4,280 pass yds · 31 TD · 11 INT · 113.0 rating"
+    },
+    {
+      "name": "Christian McCaffrey",
+      "position": "RB",
+      "stats": "1,459 rush yds · 14 rush TD · 67 rec · 564 rec yds"
+    },
+    { "name": "George Kittle", "position": "TE", "stats": "65 rec · 1,020 yds · 6 TD" },
+    { "name": "Deebo Samuel", "position": "WR", "stats": "60 rec · 892 yds · 7 TD" },
+    { "name": "Brandon Aiyuk", "position": "WR", "stats": "75 rec · 1,342 yds · 7 TD" }
+  ],
+  "teamStats": { "ppg": 26.6, "oppPpg": 16.5 },
+  "recentResults": [
+    {
+      "date": "Jan 7 2024",
+      "opponent": "Los Angeles Rams",
+      "homeAway": "home",
+      "score": "21–20",
+      "result": "W"
+    },
+    {
+      "date": "Dec 31 2023",
+      "opponent": "Washington Commanders",
+      "homeAway": "away",
+      "score": "27–10",
+      "result": "W"
+    },
+    {
+      "date": "Dec 24 2023",
+      "opponent": "Baltimore Ravens",
+      "homeAway": "home",
+      "score": "33–19",
+      "result": "W"
+    },
+    {
+      "date": "Dec 17 2023",
+      "opponent": "Arizona Cardinals",
+      "homeAway": "away",
+      "score": "45–29",
+      "result": "W"
+    },
+    {
+      "date": "Dec 10 2023",
+      "opponent": "Seattle Seahawks",
+      "homeAway": "home",
+      "score": "28–16",
+      "result": "W"
+    }
+  ],
+  "historyWins": [11, 12, 8, 5, 2, 6, 4, 13, 6, 10, 13, 12]
+}

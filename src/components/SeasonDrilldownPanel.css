@@ -1,0 +1,107 @@
+/* ---- Season Drilldown panel ---- */
+
+.drilldown__header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+.drilldown__year {
+  font-size: var(--fs-score);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--team-accent);
+}
+.drilldown__record {
+  font-size: var(--fs-hero);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-top: 0.2rem;
+}
+
+.drilldown__chips {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem 1rem;
+  margin-bottom: 1.75rem;
+}
+.drilldown__chip {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.drilldown__chip-label {
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.drilldown__chip-value {
+  font-size: var(--fs-hero-stat);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.drilldown__quote {
+  margin: 0 0 1.75rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--team-accent);
+  font-style: italic;
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.drilldown__performers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.drilldown__performer {
+  background: var(--surface-sunken);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.drilldown__performer-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.drilldown__performer-name {
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.drilldown__performer-badge {
+  font-size: var(--fs-label);
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--surface-elevated);
+  border-radius: var(--radius-pill);
+  padding: 1px 8px;
+  flex-shrink: 0;
+}
+.drilldown__performer-stat {
+  font-size: var(--fs-label);
+  color: var(--text-secondary);
+}
+
+.drilldown__pennant {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+
+@media (max-width: 620px) {
+  .drilldown__chips {
+    grid-template-columns: 1fr;
+  }
+  .drilldown__performers {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,259 @@
+/* Shared primitives used across views. Component-specific CSS lives with
+   each component; this file holds the reusable building blocks. */
+
+/* ---- Card ---- */
+.card {
+  background: var(--card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--card-shadow);
+  padding: 2.5rem;
+}
+.card--tight {
+  padding: 1.5rem;
+}
+.card--interactive {
+  transition:
+    box-shadow var(--dur-med) var(--ease-out),
+    transform var(--dur-med) var(--ease-out);
+  will-change: transform;
+}
+.card--interactive:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* ---- Section header ---- */
+.section {
+  margin-top: 2.25rem;
+}
+.section__title {
+  font-size: var(--fs-heading);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.section__count {
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--text-tertiary);
+  letter-spacing: 0;
+}
+
+/* ---- Text utilities ---- */
+.muted {
+  color: var(--text-secondary);
+}
+.faint {
+  color: var(--text-tertiary);
+}
+.caption {
+  font-size: var(--fs-caption-lg);
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+}
+.eyebrow {
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+/* ---- W/L/T pills (achromatic — never green/red) ---- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 7px;
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+.pill--w {
+  background: var(--pill-win-bg);
+  color: var(--pill-win-text);
+}
+.pill--l {
+  background: transparent;
+  border: 1px solid var(--pill-loss-border);
+  color: var(--pill-loss-text);
+}
+.pill--t {
+  background: transparent;
+  border: 1px dashed var(--pill-loss-border);
+  color: var(--pill-loss-text);
+}
+
+/* ---- Hoverable glossary trigger ---- */
+.hoverable {
+  text-decoration: none;
+  border-bottom: 1px dotted var(--text-tertiary);
+  cursor: help;
+  color: inherit;
+}
+.hoverable:hover {
+  border-bottom-color: var(--text-secondary);
+}
+.hoverable:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ---- Tooltip card ---- */
+.tooltip {
+  position: fixed;
+  z-index: 1000;
+  max-width: 320px;
+  background: var(--surface-elevated);
+  border-radius: var(--radius-md);
+  box-shadow: var(--tooltip-shadow);
+  padding: 13px 16px 14px 18px;
+  pointer-events: none;
+  overflow: hidden;
+}
+.tooltip::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--team-gradient);
+}
+.tooltip__term {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+.tooltip__body {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+.tooltip--enter {
+  animation: tooltip-in var(--dur-fast) var(--ease-out);
+}
+@keyframes tooltip-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Skeleton shimmer (for cold loads without cache) ---- */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-sunken);
+  border-radius: var(--radius-sm);
+}
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(125, 125, 130, 0.12), transparent);
+  animation: shimmer 1.4s infinite;
+}
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ---- Clickable cards (open the detail overlay) ---- */
+.clickable-card {
+  cursor: pointer;
+  transition:
+    transform 120ms var(--ease-out),
+    box-shadow 120ms var(--ease-out);
+}
+.clickable-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+.clickable-card:active {
+  transform: translateY(0);
+  transition-duration: 60ms;
+}
+.clickable-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---- Wobble (pin toggle, etc.) ---- */
+@keyframes wobble {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(9deg);
+  }
+  50% {
+    transform: rotateZ(-6deg);
+  }
+  75% {
+    transform: rotateZ(3deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+.animate-wobble {
+  display: inline-block;
+  transform-origin: 50% 50%;
+  animation: wobble 320ms ease-in-out;
+}
+
+/* ---- Empty / offseason note ---- */
+.empty-note {
+  color: var(--text-tertiary);
+  font-size: var(--fs-body-lg);
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* ---- Page load / team toggle entrance animations (v4.1) ---- */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

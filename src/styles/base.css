@@ -1,0 +1,119 @@
+/* Base resets and global element styling. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--canvas);
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+  /* Frameless window: keep the rounded look and prevent rubber-banding. */
+  overflow: hidden;
+  user-select: none;
+  cursor: default;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Theme + canvas transitions kept short and quiet. */
+body,
+.card,
+.surface {
+  transition:
+    background-color var(--dur-med) var(--ease-in-out),
+    color var(--dur-med) var(--ease-in-out),
+    border-color var(--dur-med) var(--ease-in-out);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  line-height: 1.1;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Tabular numerals everywhere numbers must align. */
+.tnum {
+  font-feature-settings:
+    'tnum' 1,
+    'cv01' 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Accent-colored focus ring (never blue/cyan). */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Quiet, theme-aware scrollbars. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

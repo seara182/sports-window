@@ -1,0 +1,180 @@
+/* ---- Bracket card ---- */
+.playoffs-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.playoffs-card--skeleton {
+  min-height: 260px;
+}
+
+.bracket-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---- Connectors ---- */
+.bracket__connector {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 1.5;
+}
+.bracket__connector--active {
+  stroke: var(--team-accent);
+}
+
+/* ---- Slot box ---- */
+.bracket__slot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  height: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: var(--font-sans);
+}
+
+.bracket__row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-body);
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+.bracket__seed {
+  flex: 0 0 20px;
+  font-size: var(--fs-label);
+  color: var(--text-tertiary);
+  text-align: right;
+}
+.bracket__badge {
+  flex: 0 0 auto;
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+.bracket__name {
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.bracket__score {
+  flex: 0 0 auto;
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.bracket__row--user .bracket__badge,
+.bracket__row--user .bracket__name {
+  color: var(--team-accent);
+}
+.bracket__row--eliminated .bracket__name {
+  color: var(--text-tertiary);
+  text-decoration: line-through;
+}
+.bracket__row--tbd .bracket__name {
+  color: var(--text-tertiary);
+}
+
+/* ---- Skeleton placeholder slots ---- */
+.bracket__slot--ghost {
+  background: transparent;
+  border-color: var(--border);
+}
+.bracket__placeholder-row {
+  height: 12px;
+  width: 70%;
+  border-radius: var(--radius-sm);
+  background: var(--surface-sunken);
+}
+
+/* ---- Final round label ---- */
+.bracket__final-label {
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-anchor: middle;
+  fill: var(--text-secondary);
+  font-family: var(--font-sans);
+}
+
+/* ---- Skeleton overlay text ---- */
+.playoffs-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  padding: 0 1.5rem;
+  pointer-events: none;
+}
+.playoffs-overlay__text {
+  font-size: var(--fs-body);
+  font-style: italic;
+  color: var(--text-secondary);
+}
+.playoffs-overlay__error {
+  font-size: var(--fs-caption);
+  color: var(--text-tertiary);
+}
+
+/* ---- Demo Mode playoff run ---- */
+.demo-playoff__title {
+  font-size: var(--fs-subheading);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+.demo-playoff__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.demo-playoff__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface-sunken);
+}
+.demo-playoff__round {
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+.demo-playoff__opponent {
+  font-size: var(--fs-body);
+  color: var(--text-primary);
+  flex: 1 1 auto;
+  text-align: center;
+}
+.demo-playoff__result {
+  font-size: var(--fs-body);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.demo-playoff__result--w {
+  color: var(--color-positive);
+}
+.demo-playoff__result--l {
+  color: var(--color-negative);
+}

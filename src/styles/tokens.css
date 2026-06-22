@@ -1,0 +1,176 @@
+/* ============================================================================
+   Design tokens — "Apple Billboard, Golden Gate edition"
+   Grayscale canvas; color appears on exactly one focal element per view.
+   ========================================================================== */
+
+:root {
+  /* ---- Light mode (default) ---- */
+  --canvas: #ffffff;
+  --card: #ffffff;
+  --surface-elevated: #ffffff;
+  --surface-sunken: #f5f5f7; /* subtle inset wells (search, pills) */
+  --surface-tint: #f5f5f7; /* the user's own standings row tint */
+
+  --text-primary: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-tertiary: #aeaeb2;
+
+  --border: #e5e5ea;
+  --border-strong: #d9d9de;
+
+  /* Multi-layer soft shadow — the only thing separating white from white. */
+  --card-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.06), 0 20px 40px rgba(0, 0, 0, 0.05);
+  --card-shadow-hover:
+    0 3px 6px rgba(0, 0, 0, 0.05), 0 12px 22px rgba(0, 0, 0, 0.08), 0 28px 52px rgba(0, 0, 0, 0.07);
+  --tooltip-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06), 0 8px 20px rgba(0, 0, 0, 0.12), 0 24px 48px rgba(0, 0, 0, 0.16);
+  --pop-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 12px 32px rgba(0, 0, 0, 0.14);
+
+  /* W/L pills — achromatic, never green/red. */
+  --pill-win-bg: #f0f0f2;
+  --pill-win-text: #1d1d1f;
+  --pill-loss-border: #d9d9de;
+  --pill-loss-text: #6e6e73;
+
+  /* App accent — International Orange, used sparingly. NO cyan anywhere. */
+  --accent: #ff4f00;
+  --accent-soft: rgba(255, 79, 0, 0.12);
+
+  /* Used only for the small career-vs-season ▲/▼ indicator. */
+  --color-positive: #34a853;
+  --color-negative: #ea4335;
+
+  /* Team gradients (set as the focal element per view). */
+  --grad-niners: linear-gradient(135deg, #aa0000 0%, #b3995d 100%);
+  --grad-giants: linear-gradient(135deg, #fd5a1e 0%, #fdb827 100%);
+  /* --team-gradient is set on the view root by the active team. */
+  --team-gradient: var(--grad-niners);
+  --team-accent: #aa0000; /* solid pull from the gradient, for tiny marks */
+
+  /* Radii */
+  --radius-card: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+
+  /* Typography */
+  --font-sans:
+    'SF Pro Display', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter',
+    'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.2, 1);
+  --dur-fast: 150ms;
+  --dur-med: 200ms;
+  --dur-slow: 320ms;
+
+  /* Chrome */
+  --titlebar-h: 46px;
+  --sidebar-width: 260px; /* single source of truth for the left nav rail width */
+  --scrollbar-thumb: rgba(0, 0, 0, 0.18);
+  color-scheme: light;
+
+  /* Sidebar frosted-glass overlay (over the blurred WPA illustration). */
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-widget-outer: rgba(255, 255, 255, 0.35);
+  --glass-widget-inner: rgba(255, 255, 255, 0.55);
+
+  /* Formation / Lineup section field & diamond surfaces. */
+  --color-field-surface: hsl(122, 32%, 91%);
+  --color-infield-surface: hsl(30, 30%, 82%);
+
+  /* ---- Right-column text scale (Settings → Text Size) ----
+     Sidebar, title bar, and the settings popover do not use these. */
+  --fs-micro: 10px;
+  --fs-label: 11px;
+  --fs-tag: 11.5px;
+  --fs-caption: 12px;
+  --fs-caption-lg: 12.5px;
+  --fs-body: 13px;
+  --fs-body-lg: 14px;
+  --fs-meta: 14.5px;
+  --fs-subheading: 15px;
+  --fs-stat: 19px;
+  --fs-heading: 22px;
+  --fs-display: 23px;
+  --fs-hero-stat: 34px;
+  --fs-hero: 50px;
+  --fs-score: 48px;
+}
+
+[data-font-size='small'] {
+  --fs-micro: 9px;
+  --fs-label: 10px;
+  --fs-tag: 10.5px;
+  --fs-caption: 11px;
+  --fs-caption-lg: 11.5px;
+  --fs-body: 12px;
+  --fs-body-lg: 13px;
+  --fs-meta: 13.5px;
+  --fs-subheading: 13.5px;
+  --fs-stat: 17px;
+  --fs-heading: 20px;
+  --fs-display: 21px;
+  --fs-hero-stat: 30px;
+  --fs-hero: 44px;
+  --fs-score: 42px;
+}
+
+[data-font-size='large'] {
+  --fs-micro: 11px;
+  --fs-label: 12px;
+  --fs-tag: 13px;
+  --fs-caption: 14px;
+  --fs-caption-lg: 14.5px;
+  --fs-body: 15px;
+  --fs-body-lg: 16px;
+  --fs-meta: 16.5px;
+  --fs-subheading: 17px;
+  --fs-stat: 22px;
+  --fs-heading: 25px;
+  --fs-display: 26px;
+  --fs-hero-stat: 39px;
+  --fs-hero: 58px;
+  --fs-score: 56px;
+}
+
+[data-theme='dark'] {
+  --canvas: #0a0a0b;
+  --card: #1c1c1e;
+  --surface-elevated: #2c2c2e;
+  --surface-sunken: #2c2c2e;
+  --surface-tint: #2c2c2e;
+
+  --text-primary: #f5f5f7;
+  --text-secondary: #98989d;
+  --text-tertiary: #636366;
+
+  --border: #38383a;
+  --border-strong: #48484a;
+
+  /* On dark, shadows barely read — separate by luminance + a hairline. */
+  --card-shadow: 0 0 0 1px #38383a;
+  --card-shadow-hover: 0 0 0 1px #48484a, 0 8px 24px rgba(0, 0, 0, 0.5);
+  --tooltip-shadow: 0 0 0 1px #48484a, 0 16px 40px rgba(0, 0, 0, 0.6);
+  --pop-shadow: 0 0 0 1px #48484a, 0 16px 40px rgba(0, 0, 0, 0.6);
+
+  --pill-win-bg: #2c2c2e;
+  --pill-win-text: #f5f5f7;
+  --pill-loss-border: #48484a;
+  --pill-loss-text: #98989d;
+
+  --accent: #ff4f00;
+  --accent-soft: rgba(255, 79, 0, 0.18);
+
+  --scrollbar-thumb: rgba(255, 255, 255, 0.2);
+  color-scheme: dark;
+
+  --glass-bg: rgba(4, 2, 1, 0.5);
+  --glass-widget-outer: rgba(255, 255, 255, 0.07);
+  --glass-widget-inner: rgba(255, 255, 255, 0.08);
+
+  --color-field-surface: hsl(122, 22%, 27%);
+  --color-infield-surface: hsl(30, 25%, 28%);
+}

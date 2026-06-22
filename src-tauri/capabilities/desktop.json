@@ -1,0 +1,8 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "desktop-update",
+  "description": "Desktop-only capabilities: cross-device updater (Phase 4) — check for, download, install updates, prompt, relaunch — plus launch-at-login (autostart). Scoped to desktop platforms so mobile builds, where these plugins are not registered, ignore them.",
+  "platforms": ["macOS", "windows", "linux"],
+  "windows": ["main"],
+  "permissions": ["updater:default", "process:default", "dialog:default", "autostart:default"]
+}

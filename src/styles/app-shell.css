@@ -1,0 +1,167 @@
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--canvas);
+}
+
+.app__body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.app__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.app__topbar {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 18px 32px 6px;
+}
+.app__topbar-spacer {
+  justify-self: start;
+}
+.app__topbar > .segmented {
+  justify-self: center;
+}
+.app__topbar-rulebook {
+  justify-self: end;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+.app__topbar-rulebook:hover {
+  background: var(--surface-sunken);
+  color: var(--accent);
+  border-color: var(--border);
+}
+.app__topbar-rulebook:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.demo-banner {
+  flex: 0 0 auto;
+  padding: 8px 16px;
+  text-align: center;
+  background: color-mix(in srgb, var(--team-accent) 20%, transparent);
+  color: var(--team-accent);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.app__scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.app__content {
+  max-width: min(920px, 100%);
+  margin: 0 auto;
+  padding: 16px 32px 56px;
+  animation: fade-in var(--dur-med) var(--ease-out) 80ms both;
+}
+
+/* Cross-fade + slide when switching team tabs. */
+.view-enter {
+  animation: view-in var(--dur-med) var(--ease-out);
+}
+@keyframes view-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================================
+   Mobile / touch layout (≤768px)
+   The sidebar becomes an off-canvas drawer (see Sidebar.css), so the body is a
+   single full-width column. Content loses its desktop side gutters and gains a
+   16px minimum touch margin; interactive chrome grows to a 44px touch target.
+   ========================================================================== */
+@media (max-width: 768px) {
+  .app__body {
+    /* Drawer is position: fixed (out of flow), so the single in-flow child
+       (.app__main) fills the width on its own. Keep this a flex column so the
+       bounded height chain survives — `display: block` here detaches
+       .app__scroll from its height constraint, so overflow-y never triggers and
+       the page can't scroll on iOS (content just clips against the fixed body). */
+    display: flex;
+  }
+
+  /* Flex children need an explicit min-height: 0 to be allowed to shrink below
+     their content and hand the overflow to .app__scroll; add iOS momentum. */
+  .app__main {
+    min-height: 0;
+  }
+  .app__scroll {
+    min-height: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .app__main {
+    width: 100%;
+  }
+
+  .app__topbar {
+    padding: 12px 16px 4px;
+  }
+
+  .app__content {
+    max-width: 100%;
+    padding: 12px 16px 64px;
+  }
+
+  /* Apple HIG: every tappable target is at least 44px tall on touch screens. */
+  .app__topbar-rulebook {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Transient notice when ESPN rate-limits us; cached data stays on screen. */
+.rate-limit-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 300;
+  max-width: min(440px, calc(100vw - 32px));
+  padding: 10px 16px;
+  background: var(--surface-elevated);
+  color: var(--text-primary);
+  border-radius: 12px;
+  box-shadow: var(--pop-shadow);
+  font-size: 13px;
+  text-align: center;
+  animation: settings-in var(--dur-fast) var(--ease-out);
+}
+@media (max-width: 768px) {
+  .rate-limit-toast {
+    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  }
+}

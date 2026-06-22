@@ -1,0 +1,96 @@
+.standings-wrap {
+  background: var(--card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--card-shadow);
+  padding: 1.25rem 1.5rem 1.5rem;
+  overflow-x: auto;
+}
+
+.standings {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--fs-body-lg);
+}
+
+.standings th,
+.standings td {
+  padding: 11px 10px;
+  text-align: right;
+  white-space: nowrap;
+}
+.standings th {
+  font-size: var(--fs-tag);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-tertiary);
+  padding-top: 6px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.standings th.col-rank,
+.standings td.col-rank {
+  text-align: center;
+  width: 28px;
+  color: var(--text-tertiary);
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.standings th.col-team,
+.standings td.col-team {
+  text-align: left;
+  width: 100%;
+}
+
+.standings tbody tr {
+  animation: fade-up 380ms var(--ease-out) both;
+}
+.standings tbody td {
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
+}
+.standings tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.standings__team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.standings__team img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+.standings__abbr {
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+.standings__name {
+  color: var(--text-secondary);
+  font-size: var(--fs-body);
+}
+
+/* The user's own row — distinguished by a subtle tint, never a border color. */
+.standings tbody tr.is-user td {
+  background: var(--surface-tint);
+}
+.standings tbody tr.is-user td:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+.standings tbody tr.is-user td:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.standings tbody tr.is-user .standings__abbr {
+  color: var(--text-primary);
+}
+
+@media (max-width: 640px) {
+  .standings__name {
+    display: none;
+  }
+}

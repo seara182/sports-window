@@ -1,0 +1,6 @@
+dist
+node_modules
+src-tauri/target
+src-tauri/gen
+testing_Variants
+package-lock.json

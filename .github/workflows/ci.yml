@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Lint
+        run: npx eslint .
+
+      - name: Format check
+        run: npx prettier --check .
+
+      - name: Unit tests
+        run: npx vitest run
+
+      - name: Verify parsers
+        run: npx tsx scripts/verify-parsers.ts
+
+      - name: Audit glossary
+        run: npx tsx scripts/audit-glossary.ts

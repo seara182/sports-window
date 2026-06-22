@@ -1,0 +1,29 @@
+.toggle {
+  width: 42px;
+  height: 25px;
+  border-radius: 999px;
+  background: var(--border-strong);
+  padding: 2px;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  transition: background-color var(--dur-med) var(--ease-out);
+}
+.toggle.is-on {
+  background: var(--accent);
+}
+.toggle:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.toggle__knob {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform var(--dur-med) var(--ease-out);
+}
+.toggle.is-on .toggle__knob {
+  transform: translateX(17px);
+}

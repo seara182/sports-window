@@ -1,0 +1,67 @@
+/* ============================================================================
+   Mobile typography & spacing (≤768px)
+   Imported after tokens.css so these overrides win. Only the largest display
+   values are scaled down — the billboard-sized hero/score numbers are sized for
+   a desktop window and overflow a phone. Body text is already comfortable.
+
+   Tokens are overridden on `.app__scroll[data-font-size]` (specificity 0,2,0) so
+   they beat the per-preference `[data-font-size='small'|'large']` rules from
+   tokens.css regardless of the user's chosen text size.
+   ========================================================================== */
+@media (max-width: 768px) {
+  .app__scroll[data-font-size] {
+    --fs-hero: clamp(2.25rem, 11vw, 3rem); /* was up to 50px */
+    --fs-score: clamp(2rem, 10vw, 2.75rem); /* was up to 48px */
+    --fs-hero-stat: clamp(1.6rem, 8vw, 2.1rem); /* was up to 34px */
+    --fs-display: 1.3rem; /* ~21px */
+    --fs-heading: 1.25rem; /* ~20px */
+    --fs-stat: 1.1rem; /* ~17.5px */
+  }
+
+  /* Minimum 16px horizontal breathing room for the content column on phones
+     (belt-and-suspenders with app-shell.css; harmless if already applied). */
+  .app__content {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  /* Search inputs (Roster, Rule Book): iOS Safari/WKWebView auto-zooms the page
+     on focus for any input with font-size below 16px, and 38px falls short of
+     the 44px touch-target minimum. */
+  .roster__search input,
+  .rulebook__search input {
+    height: 44px;
+    font-size: 16px;
+  }
+
+  /* Pull-to-refresh indicator (see hooks/usePullToRefresh.ts). Height is driven
+     inline from the live pull distance; this just styles the spinner inside it. */
+  .pull-refresh {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: height 0.15s ease-out;
+  }
+
+  .pull-refresh__spinner {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid color-mix(in srgb, var(--team-accent, currentColor) 35%, transparent);
+    border-top-color: var(--team-accent, currentColor);
+    animation: pull-refresh-spin 0.7s linear infinite;
+    opacity: 0.6;
+    transition: opacity 0.15s ease-out;
+  }
+
+  .pull-refresh--ready .pull-refresh__spinner {
+    opacity: 1;
+  }
+
+  @keyframes pull-refresh-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

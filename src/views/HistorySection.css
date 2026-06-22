@@ -1,0 +1,236 @@
+/* ---- History card ---- */
+.history-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+/* ---- Season Win/Loss Trendline ---- */
+.history-trend__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.history-trend__title {
+  font-size: var(--fs-subheading);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+.history-trend__legend {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.history-trend__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--fs-caption);
+  color: var(--text-secondary);
+}
+.history-trend__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.history-trend__area {
+  stroke: none;
+  transition: opacity var(--dur-slow) var(--ease-out) 0.2s;
+}
+.history-trend__line {
+  fill: none;
+  stroke: var(--team-accent);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dashoffset 1.4s var(--ease-out);
+}
+.history-trend__marker--missed {
+  fill: var(--card);
+  stroke: var(--team-accent);
+  stroke-width: 2;
+}
+.history-trend__marker--playoff {
+  fill: var(--team-accent);
+}
+.history-trend__marker--champion {
+  fill: #c9a84c;
+}
+.history-trend__hit {
+  fill: transparent;
+  cursor: pointer;
+}
+.history-trend__hit:focus-visible {
+  fill: var(--accent-soft);
+  outline: none;
+}
+.history-trend__axis-label {
+  font-size: 10px;
+  fill: var(--text-tertiary);
+  font-family: var(--font-sans);
+  text-anchor: middle;
+}
+
+/* ---- Championship Pennant Rail ---- */
+.history-pennants__title {
+  font-size: var(--fs-subheading);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+.history-pennants__track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  cursor: grab;
+  padding-bottom: 4px;
+  touch-action: pan-x;
+}
+.history-pennants__track::-webkit-scrollbar {
+  display: none;
+}
+.history-pennants__track:active {
+  cursor: grabbing;
+}
+.history-pennants__track:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.history-pennants__item {
+  flex-shrink: 0;
+}
+
+/* ---- Scoring Trend Bar Chart ---- */
+.history-scoring__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.history-scoring__title {
+  font-size: var(--fs-subheading);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+.history-scoring__legend {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.history-scoring__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--fs-caption);
+  color: var(--text-secondary);
+}
+.history-scoring__swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+.history-scoring__swatch--primary {
+  background: var(--team-accent);
+}
+.history-scoring__swatch--secondary {
+  background: var(--text-tertiary);
+  opacity: 0.4;
+}
+.history-scoring__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.history-scoring__bar {
+  transform-box: fill-box;
+  transform-origin: bottom;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+.history-scoring__bar--primary {
+  fill: var(--team-accent);
+}
+.history-scoring__bar--secondary {
+  fill: var(--text-tertiary);
+  opacity: 0.4;
+}
+.history-scoring__label {
+  font-size: 10px;
+  fill: var(--text-tertiary);
+  font-family: var(--font-sans);
+  text-anchor: middle;
+}
+
+/* ---- Franchise Records ---- */
+.history-records {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.history-records__card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.history-records__value {
+  font-size: var(--fs-hero-stat);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--team-accent);
+}
+.history-records__label {
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.history-records__desc {
+  font-size: var(--fs-caption);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 760px) {
+  .history-records {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---- Chart horizontal scroller (mobile) ----
+   On desktop the chart SVGs scale to the column width. On phones that makes the
+   trend/scoring charts tiny and unreadable, so we let the SVG keep a larger fixed
+   width and scroll it horizontally, with a swipe hint. Transparent on desktop. */
+.history-scroll__hint {
+  display: none;
+  margin: 6px 0 0;
+}
+@media (max-width: 768px) {
+  .history-scroll__viewport {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .history-scroll__viewport::-webkit-scrollbar {
+    display: none;
+  }
+  .history-scroll__viewport > svg {
+    min-width: 760px;
+  }
+  .history-scroll__hint {
+    display: block;
+    font-size: var(--fs-caption);
+    color: var(--text-tertiary);
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+}

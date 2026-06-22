@@ -1,0 +1,119 @@
+/* Full-viewport click-catcher behind the anchored panel; tapping it closes the
+   selector. Self-contained here (no longer the shared .settings-backdrop that
+   lived in the deleted SettingsPopover.css). */
+.team-select__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: transparent;
+}
+
+@keyframes settings-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.team-select {
+  position: fixed;
+  z-index: 201;
+  width: 300px;
+  max-height: min(70vh, 470px);
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-elevated);
+  border-radius: 16px;
+  box-shadow: var(--pop-shadow);
+  padding: 12px;
+  overflow: hidden;
+  animation: settings-in var(--dur-fast) var(--ease-out);
+  transform-origin: top left;
+}
+
+.team-select__title {
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.team-select__hint {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.team-select__group + .team-select__group {
+  margin-top: 12px;
+}
+.team-select__label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+.team-select__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 150px;
+  overflow-y: auto;
+  background: var(--surface-sunken);
+  border-radius: 10px;
+  padding: 4px;
+}
+
+/* Native OS picker — desktop uses the button list above instead. */
+.team-select__native {
+  display: none;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  /* 16px keeps iOS from zooming the page when the picker opens. */
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 10px);
+}
+.team-select__opt {
+  text-align: left;
+  padding: 8px 10px;
+  min-height: 36px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: 8px;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+.team-select__opt:hover {
+  color: var(--text-primary);
+  background: var(--card);
+}
+.team-select__opt.is-active {
+  background: var(--team-gradient);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* On phones, swap the scrollable button list for the native OS picker. */
+@media (max-width: 768px) {
+  .team-select {
+    width: min(340px, calc(100vw - 16px));
+  }
+  .team-select__native {
+    display: block;
+  }
+  .team-select__list {
+    display: none;
+  }
+}
