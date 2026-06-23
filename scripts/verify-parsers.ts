@@ -1,6 +1,6 @@
 // Headless verification of the Phase 1 parsers against real saved responses.
 // Run: npx tsx scripts/verify-parsers.ts
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { parseTeamData, type RawBundle } from '../src/data/parsers';
 import { GIANTS, NINERS } from '../src/data/teamConfig';
@@ -59,21 +59,30 @@ function report(name: string, bundle: RawBundle, cfg: typeof NINERS) {
     });
 }
 
-const niners: RawBundle = {
-  teamHub: load('nfl_team.json'),
-  schedules: [load('nfl_schedule.json'), load('nfl_schedule_2025.json')],
-  roster: load('nfl_roster.json'),
-  standings: load('nfl_standings.json'),
-};
-const giants: RawBundle = {
-  teamHub: load('mlb_team.json'),
-  schedules: [load('mlb_schedule.json')],
-  roster: load('mlb_roster.json'),
-  standings: load('mlb_standings.json'),
-};
+// The saved API responses are a local dev convenience and aren't tracked in
+// git (see README). When they're present, run the full inspection report;
+// when they're not (e.g. in CI), skip straight to the garbage smoke test
+// below, which is the part that actually needs to pass everywhere.
+if (existsSync(SAMPLES)) {
+  const niners: RawBundle = {
+    teamHub: load('nfl_team.json'),
+    schedules: [load('nfl_schedule.json'), load('nfl_schedule_2025.json')],
+    roster: load('nfl_roster.json'),
+    standings: load('nfl_standings.json'),
+  };
+  const giants: RawBundle = {
+    teamHub: load('mlb_team.json'),
+    schedules: [load('mlb_schedule.json')],
+    roster: load('mlb_roster.json'),
+    standings: load('mlb_standings.json'),
+  };
 
-report('49ers (NFL)', niners, NINERS);
-report('Giants (MLB)', giants, GIANTS);
+  report('49ers (NFL)', niners, NINERS);
+  report('Giants (MLB)', giants, GIANTS);
+} else {
+  console.log(`\nNo sample responses at ${SAMPLES} — skipping the live-data report.`);
+  console.log('(Drop saved API responses there to run it; CI only needs the smoke test.)');
+}
 
 // Defensive smoke test: every parser must survive garbage input.
 const garbage: RawBundle = {

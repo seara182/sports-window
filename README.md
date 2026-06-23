@@ -14,11 +14,18 @@ Grab the latest installer from the
 **[Releases page](https://github.com/seara182/sports-window/releases/latest)**:
 
 - **Windows:** `Sports Window_1.0.0_x64-setup.exe`
-- **macOS:** `Sports Window_1.0.0_x64.dmg`
+- **macOS (Apple Silicon — M1/M2/M3/M4):** `Sports Window_1.0.0_aarch64.dmg`
+- **macOS (Intel):** `Sports Window_1.0.0_x64.dmg`
 
 The Windows installer bundles the WebView2 runtime, so it works fully
 offline — no extra downloads during setup, even on a machine without
 internet access.
+
+> **No Windows installer on the Releases page yet?** You can build one
+> yourself: download this project (green **Code** button → **Download ZIP**),
+> unzip it, and double-click **`build-windows.bat`**. It installs what's
+> needed and produces the `.exe` for you. (Most people won't need this — it's
+> only here until a prebuilt Windows installer is attached to a release.)
 
 The app is unsigned (no paid developer certificate — see [Why no
 signing?](#why-no-signing) below), so your OS will warn you on first launch.
@@ -131,32 +138,35 @@ A signing keypair was generated with `npx tauri signer generate`. The
 `~/.tauri/sports-window.key`). Keep it safe — losing it means already-installed
 apps can no longer accept updates from this key.
 
-To publish a new version:
+**Automated (recommended).** `.github/workflows/release.yml` builds the macOS
+(`.dmg`) and Windows (`.exe`) installers on GitHub's runners and attaches
+them — plus the signed `latest.json`/`.sig` updater artifacts — to a draft
+GitHub Release. This is what gets installers in front of users without
+needing both a Mac and a Windows machine on hand. To cut a release:
 
-1. Bump the version in **both** `src-tauri/tauri.conf.json` (`version`) and
-   `src-tauri/Cargo.toml` (`package.version`) so they match, and in
-   `package.json`.
-2. Point the build at the private key (the app verifies signatures against
-   the public key it was built with):
+1. Bump the version in **all three** of `src-tauri/tauri.conf.json`
+   (`version`), `src-tauri/Cargo.toml` (`package.version`), and
+   `package.json` so they match.
+2. One-time setup: add two repo secrets (Settings → Secrets and variables →
+   Actions) so the cloud build can sign updater artifacts —
+   `TAURI_SIGNING_PRIVATE_KEY` (the contents of `~/.tauri/sports-window.key`)
+   and `TAURI_SIGNING_PRIVATE_KEY_PASSWORD` (empty string if the key has none).
+3. Tag and push:
    ```bash
-   export TAURI_SIGNING_PRIVATE_KEY="$HOME/.tauri/sports-window.key"
-   export TAURI_SIGNING_PRIVATE_KEY_PASSWORD=""   # empty if the key has no password
-   npx tauri build
+   git tag v1.0.0
+   git push origin v1.0.0
    ```
-   With `bundle.createUpdaterArtifacts: true` set in `tauri.conf.json`, this
-   emits the platform bundle, a detached `.sig` signature, and a
-   `latest.json` manifest under the bundle output directory.
-3. Create (or update) the GitHub Release for that version tag (e.g.
-   `v1.1.0`) and attach the platform bundle, its `.sig`, and `latest.json`.
-4. On next launch, other installs see the newer version in `latest.json` and
-   show the update prompt.
+4. The workflow builds all platforms and creates a **draft** release with the
+   installers attached. Review it on GitHub and publish when ready. On next
+   launch, existing installs see the newer version in `latest.json` and show
+   the update prompt.
 
-> **Per-platform builds:** a bundle must be built **on** the platform it
-> targets — Windows cannot produce a macOS bundle, and vice versa. A release
-> only delivers an installable update to the platforms it has assets for;
-> until a given version's macOS build is published, a Mac can detect a newer
-> version exists but has nothing to install yet — an acceptable interim
-> state.
+**Manual fallback.** You can also build locally (`npx tauri build` with the
+signing env vars set — see the workflow file for the exact variable names) and
+attach the bundle, its `.sig`, and `latest.json` to a release by hand. Note
+that a bundle must be built **on** the platform it targets — macOS can't
+produce a Windows installer, and vice versa — which is the whole reason the
+automated cloud build above exists.
 
 ### Known limitations
 
@@ -168,8 +178,6 @@ To publish a new version:
   rather than going blank.
 - Teams are user-selectable (any NFL/MLB team), but only the two SF teams
   get the hand-tuned easter-egg visuals.
-- Updates are built and signed by hand per platform — there's no CI pipeline
-  that builds and signs every platform's release artifact automatically yet.
 
 ### License
 
